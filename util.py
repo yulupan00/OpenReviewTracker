@@ -40,8 +40,6 @@ def getAbstractWithRating(venue):
     submissions = client.get_all_notes(invitation = f"{venue}/-/Blind_Submission", details='directReplies')
     data = []
     for submission in tqdm(submissions):
-        with open("test.txt","w") as f:
-            f.write(str(submission))
         title = submission.content['title']
         abstract = submission.content['abstract'].replace("\n", "")
         scores = []
